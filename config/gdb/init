@@ -1,0 +1,12 @@
+set debuginfod enabled on
+source /home/dx3906/CTF/pwn/pwndbg/gdbinit.py
+source /home/dx3906/.local/share/virtualenvs/pwn/lib/python3.11/site-packages/decomp2dbg/d2d.py
+source /home/dx3906/CTF/pwn/Pwngdb/pwngdb.py
+source /home/dx3906/CTF/pwn/Pwngdb/angelheap/gdbinit.py
+
+define hook-run
+python
+import angelheap
+angelheap.init_angelheap()
+end
+end
